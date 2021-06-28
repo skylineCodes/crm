@@ -33,7 +33,7 @@
             />
           </div>
           <div class="input flex flex-column">
-            <label for="date_of_birth">Date of Birth</label>
+            <label for="date_of_birth">Date of Birth - (2020/02/18)</label>
             <input
               required
               type="text"
@@ -127,7 +127,7 @@ export default {
       this.loading = true;
 
       axios
-        .post(`http://127.0.0.1:8000/api/client/store`, {
+        .post(`http://localhost:8001/api/client/store`, {
           first_name: this.first_name,
           last_name: this.last_name,
           email: this.email,
@@ -137,9 +137,10 @@ export default {
         })
         .then((res) => {
           if (res.data.status === 201) {
-            this.loading = false;
+            // this.loading = false;
             this.TOGGLE_CLIENT();
             alert("Client created successfully!");
+            this.loading = true
           }
         })
         .catch((err) => {
@@ -153,7 +154,7 @@ export default {
       this.loading = true;
 
       axios
-        .patch(`http://127.0.0.1:8000/api/client/${id}`, {
+        .patch(`http://localhost:8001/api/client/${id}`, {
           first_name: this.first_name,
           last_name: this.last_name,
           primary_legal_counsel: this.primary_legal_counsel,

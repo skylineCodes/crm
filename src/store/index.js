@@ -43,7 +43,7 @@ export default createStore({
   },
   actions: {
     async GET_CLIENTS({ commit, state }) {
-      const { data } = await axios.get(`http://127.0.0.1:8000/api/clients`);
+      const { data } = await axios.get(`http://localhost:8001/api/clients`);
       // console.log(data.data)
       data.data.forEach((client) => {
         if (!state.clientData.some((item) => item.id === client.id)) {

@@ -100,7 +100,7 @@ export default {
 
     async deleteClient(id) {
       axios
-        .delete(`http://127.0.0.1:8000/api/client/${id}`)
+        .delete(`http://localhost:8001/api/client/${id}`)
         .then(async (res) => {
           if (res.data.status === 200) {
             await this.DELETE_CLIENT(id);
