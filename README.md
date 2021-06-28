@@ -1,6 +1,11 @@
 # crm
 
 ## Project setup
+- Clone the project
+```
+git clone https://github.com/skylineCodes/crm.git
+```
+- Install dependencies
 ```
 npm install
 ```
